@@ -3,6 +3,8 @@
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <style>
 
     h2 {
@@ -29,10 +31,17 @@
     .wide {
         width: 90%;
     }
-
+    div.ex1 {
+      padding-top: 1%;
+    }
+    div.ex2 {
+      padding-top: 25%;
+    }
 </style>
 </head>
 <body>
+<div class="ex1">
+<div class="w3-container w3-center w3-animate-opacity">
 
 <div class="container">
 <table class="table">
@@ -40,7 +49,7 @@
 
 <form method="get">
 
-<label for="sortingarrangement">Select a view of your choice: </label>&nbsp
+<label for="sortingarrangement">Select a view of your choice!: </label>&nbsp
   <select id="sortingarrangement" name="sortingarrangement">
     <option value="select" disabled selected>Select an option</option>
     <option value="agency_idascending" name="agency_idascending">Ascending agency_idascending</option>
@@ -68,18 +77,24 @@
     <option value="percentage_of_total_budget_authorityascending" name="percentage_of_total_budget_authorityascending">Ascending percentage_of_total_budget_authority</option>
     <option value="percentage_of_total_budget_authoritydescending" name="percentage_of_total_budget_authoritydescending">Descending percentage_of_total_budget_authority</option>
   </select>&nbsp
-  <input type="submit" name="sortsubmitbutton" value="Submit">
+  <input type="submit" name="sortsubmitbutton" class="btn btn-outline-primary" value="Submit">
 </form>
-
+</div>
 {{tablestuff|safe}}
 {%else%}
+<div class="ex2">
 <form method="post">
     {% csrf_token %}
-    <button type="submit" name="fetchdata">Fetch data</button>
+
+    <div class="col-md-12 ">
+    <button type="submit" class="btn btn-outline-success" name="fetchdata">Fetch data!   <i class="fas fa-list"></i></button>
+  </div>
 </form>
+<div>
 {% endif %}
 </table>
 
+</div>
 </div>
 </body>
 </html>

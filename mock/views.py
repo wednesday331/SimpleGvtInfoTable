@@ -29,7 +29,7 @@ def index (request):
         json_data = json.loads(response.text)
         df = pd.DataFrame(json_normalize(json_data['results']))
         answer = request.GET.get('sortingarrangement','')
-        if answer== '':
+        if answer== 'select':
             df = pd.DataFrame(json_normalize(json_data['results']))
             html = df.to_html()
             return render(request, "mock/index.html", {"tablestuff":html})
@@ -152,5 +152,8 @@ def index (request):
             df.sort_values(by=['percentage_of_total_budget_authority'], inplace=True, ascending=False)
             html = df.to_html()
             return render(request, "mock/index.html", {"tablestuff":html})
+        else:
+            return render(request, "mock/index.html")
+
 
     return render(request, "mock/index.html")
