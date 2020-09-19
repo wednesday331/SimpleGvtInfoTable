@@ -3,7 +3,6 @@
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <style>
 
@@ -37,16 +36,29 @@
     div.ex2 {
       padding-top: 20%;
     }
+    body {
+            animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
 </style>
+
 </head>
 <body>
-<div class="ex1">
-<div class="w3-container w3-center w3-animate-opacity">
-
 <div class="container">
-<table class="table">
+
 {%if tablestuff%}
 
+<table class="table">
+<div class="ex1">
 <form method="get">
 
 <label for="sortingarrangement">Select a view of your choice!: </label>&nbsp
@@ -79,8 +91,10 @@
   </select>&nbsp
   <input type="submit" name="sortsubmitbutton" class="btn btn-outline-primary" value="Submit">
 </form>
-</div>
+</div></div>
 {{tablestuff|safe}}
+</table>
+
 {%else%}
 <div class="ex2">
   <h1> Government Spending Data Project </h1>
@@ -91,11 +105,8 @@
     <button type="submit" class="btn btn-outline-success" name="fetchdata">Fetch data!   <i class="fas fa-list"></i></button>
   </div>
 </form>
-<div>
+</div>
 {% endif %}
-</table>
 
-</div>
-</div>
 </body>
 </html>
