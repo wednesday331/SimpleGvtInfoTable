@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+<style>
+
+    h2 {
+        text-align: center;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        text-align: center;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 90%;
+    }
+    table tbody tr:hover {
+        background-color: #dddddd;
+    }
+    .wide {
+        width: 90%;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+<table class="table">
+{%if tablestuff%}
+
+<form method="get">
+
+<label for="sortingarrangement">Select a view of your choice: </label>&nbsp
+  <select id="sortingarrangement" name="sortingarrangement">
+    <option value="select" disabled selected>Select an option</option>
+    <option value="agency_idascending" name="agency_idascending">Ascending agency_idascending</option>
+    <option value="agency_iddescending" name="agency_iddescending">Descending agency_id</option>
+    <option value="toptier_codeascending" name="toptier_codeascending">Ascending toptier_code</option>
+    <option value="toptier_codedescending" name="toptier_codedescending">Descending toptier_code</option>
+    <option value="abbreviationascending" name="abbreviationascending">Ascending abbreviation</option>
+    <option value="abbreviationdescending" name="abbreviationdescending">Descending abbreviation</option>
+    <option value="agency_nameascending" name="agency_nameascending">Ascending agency_name</option>
+    <option value="agency_namedescending" name="agency_namedescending">Descending agency_name</option>
+    <option value="congressional_justification_urlascending" name="congressional_justification_urlascending">Ascending congressional_justification_url</option>
+    <option value="congressional_justification_urldescending" name="congressional_justification_urldescending">Descending congressional_justification_url</option>
+    <option value="active_fyascending" name="active_fyascending">Ascending active_fy</option>
+    <option value="active_fydescending" name="active_fydescending">Descending active_fy</option>
+    <option value="active_fqascending" name="active_fqascending">Ascending active_fq</option>
+    <option value="active_fqdescending" name="active_fqdescending">Descending active_fq</option>
+    <option value="outlay_amountascending" name="outlay_amountascending">Ascending outlay_amount</option>
+    <option value="outlay_amountdescending" name="outlay_amountdescending">Descending outlay_amount</option>
+    <option value="obligated_amountascending" name="obligated_amountascending">Ascending obligated_amount</option>
+    <option value="obligated_amountdescending" name="obligated_amountdescending">Descending obligated_amount</option>
+    <option value="budget_authority_amountascending" name="budget_authority_amountascending">Ascending budget_authority_amount</option>
+    <option value="budget_authority_amountdescending" name="budget_authority_amountdescending">Descending budget_authority_amount</option>
+    <option value="current_total_budget_authority_amountascending" name="current_total_budget_authority_amountascending">Ascending current_total_budget_authority_amount</option>
+    <option value="current_total_budget_authority_amountdescending" name="current_total_budget_authority_amountdescending">Descending current_total_budget_authority_amount</option>
+    <option value="percentage_of_total_budget_authorityascending" name="percentage_of_total_budget_authorityascending">Ascending percentage_of_total_budget_authority</option>
+    <option value="percentage_of_total_budget_authoritydescending" name="percentage_of_total_budget_authoritydescending">Descending percentage_of_total_budget_authority</option>
+  </select>&nbsp
+  <input type="submit" name="sortsubmitbutton" value="Submit">
+</form>
+
+{{tablestuff|safe}}
+{%else%}
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" name="fetchdata">Fetch data</button>
+</form>
+{% endif %}
+</table>
+
+</div>
+</body>
+</html>
