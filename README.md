@@ -1,4 +1,4 @@
-# Obtaining Governmental Information and Displaying a Sortable Table: 
+# Displaying Governmental Information in a Sortable Table:
 
 This project was created as a job interview mock assignment to gauge whether I was a suitable candidate to work for that company (I own this code!). 
   
