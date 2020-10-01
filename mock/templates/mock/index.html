@@ -55,44 +55,44 @@
 <body>
 <div class="container">
 
-{%if tablestuff%}
+{%if table_stuff%}
 
 <table class="table">
-<div class="ex1">
+<div class="ex_1">
 <form method="get">
 
-<label for="sortingarrangement">Select a view of your choice!: </label>&nbsp
-  <select id="sortingarrangement" name="sortingarrangement">
+<label for="sorting_arrangement">Select a view of your choice!: </label>&nbsp
+  <select id="sorting_arrangement" name="sorting_arrangement">
     <option value="select" disabled selected>Select an option</option>
-    <option value="agency_idascending" name="agency_idascending">Ascending agency_idascending</option>
-    <option value="agency_iddescending" name="agency_iddescending">Descending agency_id</option>
-    <option value="toptier_codeascending" name="toptier_codeascending">Ascending toptier_code</option>
-    <option value="toptier_codedescending" name="toptier_codedescending">Descending toptier_code</option>
-    <option value="abbreviationascending" name="abbreviationascending">Ascending abbreviation</option>
-    <option value="abbreviationdescending" name="abbreviationdescending">Descending abbreviation</option>
-    <option value="agency_nameascending" name="agency_nameascending">Ascending agency_name</option>
-    <option value="agency_namedescending" name="agency_namedescending">Descending agency_name</option>
-    <option value="congressional_justification_urlascending" name="congressional_justification_urlascending">Ascending congressional_justification_url</option>
-    <option value="congressional_justification_urldescending" name="congressional_justification_urldescending">Descending congressional_justification_url</option>
-    <option value="active_fyascending" name="active_fyascending">Ascending active_fy</option>
-    <option value="active_fydescending" name="active_fydescending">Descending active_fy</option>
-    <option value="active_fqascending" name="active_fqascending">Ascending active_fq</option>
-    <option value="active_fqdescending" name="active_fqdescending">Descending active_fq</option>
-    <option value="outlay_amountascending" name="outlay_amountascending">Ascending outlay_amount</option>
-    <option value="outlay_amountdescending" name="outlay_amountdescending">Descending outlay_amount</option>
-    <option value="obligated_amountascending" name="obligated_amountascending">Ascending obligated_amount</option>
-    <option value="obligated_amountdescending" name="obligated_amountdescending">Descending obligated_amount</option>
-    <option value="budget_authority_amountascending" name="budget_authority_amountascending">Ascending budget_authority_amount</option>
-    <option value="budget_authority_amountdescending" name="budget_authority_amountdescending">Descending budget_authority_amount</option>
-    <option value="current_total_budget_authority_amountascending" name="current_total_budget_authority_amountascending">Ascending current_total_budget_authority_amount</option>
-    <option value="current_total_budget_authority_amountdescending" name="current_total_budget_authority_amountdescending">Descending current_total_budget_authority_amount</option>
-    <option value="percentage_of_total_budget_authorityascending" name="percentage_of_total_budget_authorityascending">Ascending percentage_of_total_budget_authority</option>
+    <option value="agency_id_ascending" name="agency_id_ascending">Ascending agency_id</option>
+    <option value="agency_id_descending" name="agency_id_descending">Descending agency_id</option>
+    <option value="toptier_code_ascending" name="toptier_code_ascending">Ascending toptier_code</option>
+    <option value="toptier_code_descending" name="toptier_code_descending">Descending toptier_code</option>
+    <option value="abbreviation_ascending" name="abbreviation_ascending">Ascending abbreviation</option>
+    <option value="abbreviation_descending" name="abbreviation_descending">Descending abbreviation</option>
+    <option value="agency_name_ascending" name="agency_name_ascending">Ascending agency_name</option>
+    <option value="agency_name_descending" name="agency_name_descending">Descending agency_name</option>
+    <option value="congressional_justification_url_ascending" name="congressional_justification_url_ascending">Ascending congressional_justification_url</option>
+    <option value="congressional_justification_url_descending" name="congressional_justification_url_descending">Descending congressional_justification_url</option>
+    <option value="active_fy_ascending" name="active_fy_ascending">Ascending active_fy</option>
+    <option value="active_fy_descending" name="active_fy_descending">Descending active_fy</option>
+    <option value="active_fq_ascending" name="active_fq_ascending">Ascending active_fq</option>
+    <option value="active_fq_descending" name="active_fq_descending">Descending active_fq</option>
+    <option value="outlay_amount_ascending" name="outlay_amount_ascending">Ascending outlay_amount</option>
+    <option value="outlay_amount_descending" name="outlay_amount_descending">Descending outlay_amount</option>
+    <option value="obligated_amount_ascending" name="obligated_amount_ascending">Ascending obligated_amount</option>
+    <option value="obligated_amount_descending" name="obligated_amount_descending">Descending obligated_amount</option>
+    <option value="budget_authority_amount_ascending" name="budget_authority_amount_ascending">Ascending budget_authority_amount</option>
+    <option value="budget_authority_amount_descending" name="budget_authority_amount_descending">Descending budget_authority_amount</option>
+    <option value="current_total_budget_authority_amount_ascending" name="current_total_budget_authority_amount_ascending">Ascending current_total_budget_authority_amount</option>
+    <option value="current_total_budget_authority_amount_descending" name="current_total_budget_authority_amount_descending">Descending current_total_budget_authority_amount</option>
+    <option value="percentage_of_total_budget_authority_ascending" name="percentage_of_total_budget_authority_ascending">Ascending percentage_of_total_budget_authority</option>
     <option value="percentage_of_total_budget_authoritydescending" name="percentage_of_total_budget_authoritydescending">Descending percentage_of_total_budget_authority</option>
   </select>&nbsp
-  <input type="submit" name="sortsubmitbutton" class="btn btn-outline-primary" value="Submit">
+  <input type="submit" name="sort_submit_button" class="btn btn-outline-primary" value="Submit">
 </form>
 </div></div>
-{{tablestuff|safe}}
+{{table_stuff|safe}}
 </table>
 
 {%else%}
@@ -102,7 +102,7 @@
     {% csrf_token %}
 
     <div class="col-md-12 ">
-    <button type="submit" class="btn btn-outline-success" name="fetchdata">Fetch data!   <i class="fas fa-list"></i></button>
+    <button type="submit" class="btn btn-outline-success" name="fetch_data">Fetch data!   <i class="fas fa-list"></i></button>
   </div>
 </form>
 </div>
